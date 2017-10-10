@@ -2,13 +2,13 @@
  * Build URL query from object / array.
  * PHP: http://php.net/manual/en/function.http-build-query.php
  * 
- * Usage: http_build_query({ foo: "bar", star: "wars })
+ * Usage: http_build_query({ foo: "bar", star: "wars" })
  * Output: foo=bar&star=wars
  * 
  * Usage: http_build_query(["foo", "bar"], "form_")
  * Output: form_0=foo&form_1=bar
  * 
- * Usage: http_build_query({ foo: "bar", star: "wars }, "", "$")
+ * Usage: http_build_query({ foo: "bar", star: "wars" }, "", "$")
  * Output: foo=bar$star=wars
  */
 function http_build_query(query_data, numeric_prefix, arg_separator) {
@@ -25,8 +25,8 @@ function http_build_query(query_data, numeric_prefix, arg_separator) {
   
   var esc = encodeURIComponent;
   
-  return Object.keys(params)
+  return Object.keys(query_data)
   		.map(function (k) {
-		  return esc(k) + '=' + esc(params[k])
+		  return esc(k) + '=' + esc(query_data[k])
                 }).join(arg_separator);
 }
