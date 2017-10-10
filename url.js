@@ -26,7 +26,7 @@ function http_build_query(query_data, numeric_prefix, arg_separator) {
   var esc = encodeURIComponent;
   
   return Object.keys(params)
-							 	.map(function (k) {
+  							.map(function (k) {
 							 		return esc(k) + '=' + esc(params[k])
 								}).join(arg_separator);
 }
