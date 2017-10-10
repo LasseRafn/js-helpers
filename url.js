@@ -28,5 +28,5 @@ function http_build_query(query_data, numeric_prefix, arg_separator) {
   return Object.keys(params)
   							.map(function (k) {
 							 		return esc(k) + '=' + esc(params[k])
-								}).join(arg_separator);
+                }).join(arg_separator);
 }
